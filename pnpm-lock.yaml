@@ -66,6 +66,9 @@ devDependencies:
   '@angular/language-service':
     specifier: ~16.0.0
     version: 16.0.0
+  '@nrwl/node':
+    specifier: ^16.3.2
+    version: 16.3.2(@types/node@16.11.7)(eslint@8.15.0)(nx@16.3.2)(ts-node@10.9.1)(typescript@5.0.2)
   '@nx/cypress':
     specifier: 16.3.2
     version: 16.3.2(cypress@12.11.0)(eslint@8.15.0)(nx@16.3.2)(typescript@5.0.2)
@@ -3625,6 +3628,25 @@ packages:
       - typescript
       - verdaccio
 
+  /@nrwl/node@16.3.2(@types/node@16.11.7)(eslint@8.15.0)(nx@16.3.2)(ts-node@10.9.1)(typescript@5.0.2):
+    resolution: {integrity: sha512-QRMN9K1LgfqeERdgynnLE7vruJshPVgAA1kp3AXcxZq6kmE+RxCZ/TxC6jzpCNEVg6tPYBzmBrJiqga+aDI8jQ==}
+    dependencies:
+      '@nx/node': 16.3.2(@types/node@16.11.7)(eslint@8.15.0)(nx@16.3.2)(ts-node@10.9.1)(typescript@5.0.2)
+    transitivePeerDependencies:
+      - '@babel/traverse'
+      - '@swc-node/register'
+      - '@swc/core'
+      - '@types/node'
+      - debug
+      - eslint
+      - node-notifier
+      - nx
+      - supports-color
+      - ts-node
+      - typescript
+      - verdaccio
+    dev: true
+
   /@nrwl/tao@16.3.2:
     resolution: {integrity: sha512-2Kg7dtv6JcQagCZPSq+okceI81NqmXGGgbKWqS7sOfdmp1otxS9uiUFNXw+Pdtnw38mdRviMtSOXScntu4sUKg==}
     hasBin: true
@@ -3925,6 +3947,31 @@ packages:
       - supports-color
       - typescript
       - verdaccio
+
+  /@nx/node@16.3.2(@types/node@16.11.7)(eslint@8.15.0)(nx@16.3.2)(ts-node@10.9.1)(typescript@5.0.2):
+    resolution: {integrity: sha512-UGRuawRYQczkus3Gne3JH2xIUeWPrw63j9UM+e0IynC7ocQFNGOZYvOhEMOyoq9fdb22vno17D5v84dRGuWlsA==}
+    dependencies:
+      '@nrwl/node': 16.3.2(@types/node@16.11.7)(eslint@8.15.0)(nx@16.3.2)(ts-node@10.9.1)(typescript@5.0.2)
+      '@nx/devkit': 16.3.2(nx@16.3.2)
+      '@nx/jest': 16.3.2(@types/node@16.11.7)(nx@16.3.2)(ts-node@10.9.1)(typescript@5.0.2)
+      '@nx/js': 16.3.2(nx@16.3.2)(typescript@5.0.2)
+      '@nx/linter': 16.3.2(eslint@8.15.0)(nx@16.3.2)(typescript@5.0.2)
+      '@nx/workspace': 16.3.2
+      tslib: 2.5.3
+    transitivePeerDependencies:
+      - '@babel/traverse'
+      - '@swc-node/register'
+      - '@swc/core'
+      - '@types/node'
+      - debug
+      - eslint
+      - node-notifier
+      - nx
+      - supports-color
+      - ts-node
+      - typescript
+      - verdaccio
+    dev: true
 
   /@nx/nx-darwin-arm64@16.3.2:
     resolution: {integrity: sha512-YfYVNfsJBzBcBnJUU4AcA6A4QMkgnVlETfp4KGL36Otq542mRY1ISGHdox63ocI5AKh5gay5AaGcR4wR9PU9Vg==}
