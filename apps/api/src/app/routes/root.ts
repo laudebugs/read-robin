@@ -15,7 +15,7 @@ export default async function (fastify: FastifyInstance) {
     }
   );
 
-  fastify.get('/summary',
+  fastify.get('/summarize',
 
   async function (request: FastifyRequest, reply: FastifyReply) {
 

@@ -16,7 +16,7 @@ export class FeedPage {
 
   selectArticle(url: string){
     this.selectedArticle.set(url)
-    this.http.get(`http://localhost:3000/summarize?url=${encodeURIComponent(url)}`).subscribe((result)=>{
+    this.http.get(`http://localhost:3000/summarize?url=${encodeURIComponent(this.selectedArticle())}`).subscribe((result)=>{
       console.log(result)
     })
   }
