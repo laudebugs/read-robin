@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import AutoLoad from '@fastify/autoload';
-
+import cors from '@fastify/cors'
 /* eslint-disable-next-line */
 export interface AppOptions {}
 
@@ -13,6 +13,19 @@ export async function app(fastify: FastifyInstance, opts: AppOptions) {
   // This loads all plugins defined in plugins
   // those should be support plugins that are reused
   // through your application
+  fastify.register(cors, {
+    origin: (origin, cb) => {
+      const hostname = new URL(origin).hostname
+      if(hostname === "localhost"){
+        //  Request from localhost will pass
+        cb(null, true)
+        return
+      }
+      // Generate an error on other origins, disabling access
+      cb(new Error("Not allowed"), false)
+    }
+  })
+
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'plugins'),
     options: { ...opts },

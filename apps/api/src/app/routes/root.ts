@@ -19,7 +19,9 @@ export default async function (fastify: FastifyInstance) {
 
   async function (request: FastifyRequest, reply: FastifyReply) {
 
-    const prompt = 'Give me a joke';
+    const url = request.params['url']
+    console.log(url)
+    const prompt = 'Give me a summary of this article: https://www.sbstatesman.com/2023/04/04/if-we-lose-the-internet-archive-were-screwed/';
 
     const options: CreateCompletionRequest = {
       model: 'text-davinci-003',  // Specify the engine (e.g., text-davinci-003)

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import {articles} from './articles'
+import {HttpClient, HttpClientModule} from '@angular/common/http'
 
 @Component({
   selector: 'read-robin-feed',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['feed.page.scss'],
 })
 export class FeedPage {
-  constructor() {}
+
+  selectedArticle = signal<string>('')
+  articlesList = articles.slice(0, 10)
+
+  constructor(private http: HttpClient) {}
+
+  selectArticle(url: string){
+    this.selectedArticle.set(url)
+    this.http.get(`http://localhost:3000/summarize?url=${encodeURIComponent(url)}`).subscribe((result)=>{
+      console.log(result)
+    })
+  }
+
 }
